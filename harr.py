@@ -114,7 +114,7 @@ def train(train_dataloader,
         pos = max_value - threshold_s/512.0
         neg = threshold_s/512.0 - min_value
 
-        logger.info('Start traning')
+        logger.info('Start training')
         # Training
         model.train()
         model_ex.eval()
