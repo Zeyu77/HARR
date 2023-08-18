@@ -52,7 +52,11 @@ cifar10: 10000 query images, 5000 training images. Return MAP@ALL(50000) The sam
 
 How to train: 
 First generate the similarity structure for dataset in two steps:
+
 step 1. python run.py --train --eta_4 10
+
 step 2. python search.py 2 0
+
 Then start training the model:
+
 python run.py --train --eta_4 100
