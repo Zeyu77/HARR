@@ -48,9 +48,10 @@ optional arguments:
 
 
 ## EXPERIMENTS
-cifar10: 10000 query images, 5000 training images. Return MAP@ALL(50000) The same setting with DistillHash (19' CVPR )
+cifar10: 10000 query images, 5000 training images. Return MAP@ALL(50000) The same setting as DistillHash (19' CVPR )
 
 How to train: 
+
 First generate the similarity structure for dataset in two steps:
 
 step 1. python run.py --train --eta_4 10
