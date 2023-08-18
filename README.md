@@ -34,11 +34,15 @@ optional arguments:
   --evaluate            Evaluate mode.
   -g GPU, --gpu GPU     Using gpu.(default: 2)
   -e EVALUATE_INTERVAL, --evaluate-interval EVALUATE_INTERVAL
-                        Interval of evaluation.(default: 50)
+                        Interval of evaluation.(default: 10)
   --eta_1                 Hyper-parameter for weight balance. (default:1.0)
   --eta_2                 Hyper-parameter for weight balance. (default:0.5)
-
+  --eta_3                 which dataset.(default:2.0)
+  --eta_4                 which step.(default:10)
   --threshold             Hyper-parameter for similarity structure. (default:210)
+  --number_permutation    Hyper-parameter.(default:512)
+  --K                     Hyper-parameter.(default:8)
+  --percentile            Hyper-parameter.(default:0.3)
   ```
 
 
@@ -46,4 +50,9 @@ optional arguments:
 ## EXPERIMENTS
 cifar10: 10000 query images, 5000 training images. Return MAP@ALL(50000) The same setting with DistillHash (19' CVPR )
 
-How to train: python run.py --train 
+How to train: 
+First generate the similarity structure for dataset in two steps:
+step 1. python run.py --train --eta_4 10
+step 2. python search.py 2 0
+Then start training the model:
+python run.py --train --eta_4 100
